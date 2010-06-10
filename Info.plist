@@ -11,7 +11,7 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>1.0.1</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>Chrome</key>
@@ -20,27 +20,83 @@
 		<array>
 			<dict>
 				<key>Command</key>
-				<string>google</string>
+				<string>0</string>
 				<key>Identifier</key>
-				<string>google</string>
+				<string>0</string>
 				<key>Title</key>
-				<string>Google翻訳</string>
+				<string>0</string>
 			</dict>
 			<dict>
 				<key>Command</key>
-				<string>alc</string>
+				<string>1</string>
 				<key>Identifier</key>
-				<string>alc</string>
+				<string>1</string>
 				<key>Title</key>
-				<string>アルク</string>
+				<string>1</string>
 			</dict>
 			<dict>
 				<key>Command</key>
-				<string>ud</string>
+				<string>2</string>
 				<key>Identifier</key>
-				<string>ud</string>
+				<string>2</string>
 				<key>Title</key>
-				<string>Urban Dictionary</string>
+				<string>2</string>
+			</dict>
+			<dict>
+				<key>Command</key>
+				<string>3</string>
+				<key>Identifier</key>
+				<string>3</string>
+				<key>Title</key>
+				<string>3</string>
+			</dict>
+			<dict>
+				<key>Command</key>
+				<string>4</string>
+				<key>Identifier</key>
+				<string>4</string>
+				<key>Title</key>
+				<string>4</string>
+			</dict>
+			<dict>
+				<key>Command</key>
+				<string>5</string>
+				<key>Identifier</key>
+				<string>5</string>
+				<key>Title</key>
+				<string>5</string>
+			</dict>
+			<dict>
+				<key>Command</key>
+				<string>6</string>
+				<key>Identifier</key>
+				<string>6</string>
+				<key>Title</key>
+				<string>6</string>
+			</dict>
+			<dict>
+				<key>Command</key>
+				<string>7</string>
+				<key>Identifier</key>
+				<string>7</string>
+				<key>Title</key>
+				<string>7</string>
+			</dict>
+			<dict>
+				<key>Command</key>
+				<string>8</string>
+				<key>Identifier</key>
+				<string>8</string>
+				<key>Title</key>
+				<string>8</string>
+			</dict>
+			<dict>
+				<key>Command</key>
+				<string>9</string>
+				<key>Identifier</key>
+				<string>9</string>
+				<key>Title</key>
+				<string>9</string>
 			</dict>
 		</array>
 		<key>Global Page</key>

@@ -2,7 +2,23 @@
 <html>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script type="text/javascript" charset="utf-8">
+var pattern = undefined;
 function initAll() {
+  pattern = JSON.parse(safari.extension.settings.pattern);
+  safari.application.addEventListener(
+    "validate",
+    function(event) {
+      if (event.command < pattern.length) {
+        event.target.command = pattern[event.command].command;
+        event.target.title = pattern[event.command].title;
+        event.target.disabled = false;
+      }
+      else {
+        event.target.disabled = true;      
+      }
+    },
+    false
+  );
   safari.application.addEventListener(
     "command",
     function(event) {
@@ -13,8 +29,17 @@ function initAll() {
   safari.application.addEventListener(
     "message",
     function(msg) {
-      var newTab = safari.application.activeBrowserWindow.activeTab.browserWindow.openTab();
-      newTab.url = msg.name;
+      switch (msg.name) {
+        case "open":
+          for (var i = 0; i < pattern.length; i++) {
+            if (pattern[i].command == msg.message.command) {
+              var newTab = safari.application.activeBrowserWindow.activeTab.browserWindow.openTab();
+              newTab.url = pattern[i].url.replace("{}", encodeURIComponent(msg.message.string));
+              break;
+            }
+          }
+          break;
+      }
     },
     false
   );

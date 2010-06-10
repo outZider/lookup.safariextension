@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>DefaultValue</key>
+		<string>[{"command": "googleEJ", "url": "http://translate.google.co.jp/?hl=ja&amp;tab=wT#en|ja|{}", "title": "lookup: Google翻訳(英和)"},   {"command": "alc", "url": "http://eow.alc.co.jp/{}/UTF-8/?ref=sa", "title": "lookup: アルク"}, {"command": "ud", "url": "http://www.urbandictionary.com/define.php?term={}", "title": "lookup: Urban Dictionary"}]</string>
+		<key>Key</key>
+		<string>pattern</string>
+		<key>Title</key>
+		<string>パターン定義</string>
+		<key>Type</key>
+		<string>TextField</string>
+	</dict>
+</array>
+</plist>
