@@ -11,7 +11,7 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0.2</string>
+	<string>1.0.3</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>Chrome</key>
@@ -101,6 +101,23 @@
 		</array>
 		<key>Global Page</key>
 		<string>global.html</string>
+		<key>Toolbar Items</key>
+		<array>
+			<dict>
+				<key>Command</key>
+				<string>openSettingWindow</string>
+				<key>Identifier</key>
+				<string>openSettingWindow</string>
+				<key>Image</key>
+				<string>icon16x16.png</string>
+				<key>Label</key>
+				<string>lookup</string>
+				<key>Palette Label</key>
+				<string>lookup</string>
+				<key>Tool Tip</key>
+				<string>click to open the setting window</string>
+			</dict>
+		</array>
 	</dict>
 	<key>Content</key>
 	<dict>
@@ -120,6 +137,8 @@
 	<dict>
 		<key>Website Access</key>
 		<dict>
+			<key>Include Secure Pages</key>
+			<true/>
 			<key>Level</key>
 			<string>All</string>
 		</dict>

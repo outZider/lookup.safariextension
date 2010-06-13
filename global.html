@@ -8,13 +8,18 @@ function initAll() {
   safari.application.addEventListener(
     "validate",
     function(event) {
-      if (event.target.identifier < pattern.length) {
-        event.target.command = pattern[event.command].command;
-        event.target.title = pattern[event.command].title;
+      if (event.command == "openSettingWindow") {
         event.target.disabled = false;
       }
       else {
-        event.target.disabled = true;
+        if (event.target.identifier < pattern.length) {
+          event.target.command = pattern[event.command].command;
+          event.target.title = pattern[event.command].title;
+          event.target.disabled = false;
+        }
+        else {
+          event.target.disabled = true;
+        }
       }
     },
     false
@@ -22,7 +27,16 @@ function initAll() {
   safari.application.addEventListener(
     "command",
     function(event) {
-      safari.application.activeBrowserWindow.activeTab.page.dispatchMessage(event.command);
+      switch (event.command) {
+        case "openSettingWindow":
+          localStorage.pattern = safari.extension.settings.pattern;
+          var newTab = safari.application.activeBrowserWindow.activeTab.browserWindow.openTab();
+          newTab.url = safari.extension.baseURI + "option.html";
+          break;
+        default:
+          safari.application.activeBrowserWindow.activeTab.page.dispatchMessage(event.command);
+          break;
+      }
     },
     false
   );
@@ -38,6 +52,9 @@ function initAll() {
               break;
             }
           }
+          break;
+        case "saveOption":
+          safari.extension.settings[msg.message.key] = msg.message.value;
           break;
       }
     },
