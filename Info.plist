@@ -11,9 +11,9 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0.7</string>
+	<string>1.0.9</string>
 	<key>CFBundleVersion</key>
-	<string>1.0.7</string>
+	<string>1.0.9</string>
 	<key>Chrome</key>
 	<dict>
 		<key>Context Menu Items</key>
@@ -144,7 +144,7 @@
 		</dict>
 	</dict>
 	<key>Update Manifest URL</key>
-	<string>http://github.com/outZider/lookup.safariextension/raw/master/update.plist</string>
+	<string>http://dl.dropbox.com/u/8073378/update.plist</string>
 	<key>Website</key>
 	<string>http://github.com/outZider/lookup.safariextension</string>
 </dict>
