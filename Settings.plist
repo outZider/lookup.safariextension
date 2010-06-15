@@ -12,5 +12,11 @@
 		<key>Type</key>
 		<string>TextField</string>
 	</dict>
+	<dict>
+		<key>DefaultValue</key>
+		<real>1000</real>
+		<key>Key</key>
+		<string>deltaTimeThreshold</string>
+	</dict>
 </array>
 </plist>
