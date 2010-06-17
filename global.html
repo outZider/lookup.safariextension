@@ -1,5 +1,6 @@
 <html>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript" charset="utf-8" src="ecl.js"></script>
 <script type="text/javascript" charset="utf-8">
 var pattern = undefined;
 function initAll() {
@@ -50,7 +51,19 @@ function initAll() {
           for (var i = 0; i < pattern.length; i++) {
             if (pattern[i].command == msg.message.command) {
               var newTab = safari.application.activeBrowserWindow.activeTab.browserWindow.openTab();
-              newTab.url = pattern[i].url.replace("{}", encodeURIComponent(msg.message.string));
+              var encode = pattern[i].url.match(/\{(.*)\}/)[1];
+              encode = encode ? encode.replace(/[-_]/, "").toLowerCase() : "utf8";
+              switch (encode) {
+                case "utf8":
+                  newTab.url = pattern[i].url.replace(/\{.*\}/, encodeURIComponent(msg.message.string));
+                  break;
+                case "shiftjis":
+                  newTab.url = pattern[i].url.replace(/\{.*\}/, EscapeSJIS(msg.message.string));
+                  break;
+                case "eucjp":
+                  newTab.url = pattern[i].url.replace(/\{.*\}/, EscapeEUCJP(msg.message.string));
+                  break;
+              }
               break;
             }
           }
