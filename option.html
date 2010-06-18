@@ -3,10 +3,8 @@
 <meta http-equiv="Content-type" content="text/html; charset=utf-8">
 <title>lookup.safariextz setting window</title>
 <style>
-table th td {
-  border: 1px #444 solid;
-  margin: 0px;
-  padding: 0px;
+.tDnD_whileDrag {
+  background-color: #f84;
 }
 </style>
 <script type="text/javascript" src="jquery-1.4.2.min.js"></script>
@@ -26,7 +24,7 @@ $(document).ready(function() {
 function save() {
   var pattern = [];
   var rows = document.querySelectorAll("tr");
-  for (var i = 0; i < NUMMAXITEMS; i++) {
+  for (var i = 1; i < NUMMAXITEMS + 1; i++) {
     var title = rows[i].children[0].children[0].value;
     var url = rows[i].children[1].children[0].value;
     var command = rows[i].children[2].children[0].value;
@@ -40,6 +38,7 @@ function save() {
 </head>
 <body>
   <table id="t1">
+    <tr class="nodrag nodrop"><th>title</th><th>url</th><th>command</th></tr>
     <tr>
       <td><input id="title0" type="text"></td>
       <td><input id="url0" type="text" size="100"></td>
